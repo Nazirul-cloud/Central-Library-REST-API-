@@ -9,7 +9,7 @@ const loadBooks = () =>{
     const searchText = document.getElementById('input-field').value;
    // show spinner
     toggleSpinner('block');
-    const url = `http://openlibrary.org/search.json?q=${searchText}`;
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
      fetch(url)
     .then(res =>res.json())
     .then( data => displayBooks(data.docs.slice(0,20)));
@@ -19,7 +19,7 @@ const loadBooks = () =>{
 // Total Found Books
 const loadFound = () =>{
     const searchText = document.getElementById('input-field').value;
-    const url = `http://openlibrary.org/search.json?q=${searchText}`;
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
     .then(res =>res.json())
     .then( data => displayFoundResult(data));
